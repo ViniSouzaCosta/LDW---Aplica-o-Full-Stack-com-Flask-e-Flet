@@ -16,6 +16,7 @@ digimons = [
     }
 ]
 
+
 @bp.route("/digimons", methods=["GET"])
 def listar_digimons():
     """
@@ -29,38 +30,70 @@ def listar_digimons():
     """
     return jsonify(digimons)
 
+
 @bp.route("/digimons/<int:id>", methods=["GET"])
 def buscar_digimon(id):
     """
-    Busca Digimon por ID
+    Busca um Digimon pelo ID
     ---
     tags:
       - Digimons
     parameters:
       - name: id
         in: path
+        type: integer
         required: true
-        schema:
-          type: integer
+        description: ID do Digimon
     responses:
       200:
         description: Digimon encontrado
+      404:
+        description: Digimon não encontrado
     """
+
     for digimon in digimons:
         if digimon["id"] == id:
             return jsonify(digimon)
 
     return jsonify({"erro": "Digimon não encontrado"}), 404
 
+
 @bp.route("/digimons", methods=["POST"])
 def cadastrar_digimon():
+    """
+    Cadastra um novo Digimon
+    ---
+    tags:
+      - Digimons
+    parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          type: object
+          properties:
+            nome:
+              type: string
+              example: Patamon
+            nivel:
+              type: string
+              example: Rookie
+    responses:
+      201:
+        description: Digimon cadastrado com sucesso
+      400:
+        description: Erro de validação
+    """
 
     dados = request.json
 
     try:
         novo = DigimonSchema(**dados)
+
     except Exception as e:
-        return jsonify({"erro": str(e)}), 400
+        return jsonify({
+            "erro": str(e)
+        }), 400
 
     digimon = {
         "id": len(digimons) + 1,
@@ -70,4 +103,4 @@ def cadastrar_digimon():
 
     digimons.append(digimon)
 
-    return jsonify(digimon), 201    
+    return jsonify(digimon), 201
