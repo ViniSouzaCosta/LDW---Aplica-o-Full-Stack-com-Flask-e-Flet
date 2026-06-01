@@ -1,0 +1,150 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<body class="bg-slate-100">
+    <div class="max-w-6xl mx-auto p-8">
+        <div class="bg-white rounded-xl shadow-lg p-10">
+            <h1 class="text-5xl font-bold text-center mb-4">
+                DigimonDex
+            </h1>
+            <p class="text-center text-lg text-gray-600 mb-10">
+                Aplicação Full Stack desenvolvida para a disciplina de
+                Linguagem de Desenvolvimento Web utilizando Flask, Flet e
+                Tailwind CSS.
+            </p>
+            <section class="mb-10">
+                <h2 class="text-3xl font-bold mb-4">
+                    Sobre o Projeto
+                </h2>
+                <p class="text-gray-700 leading-relaxed">
+                    O DigimonDex é uma aplicação que permite consultar e cadastrar
+                    Digimons através de uma API REST desenvolvida com Flask.
+                    Os dados são consumidos por uma interface desktop construída
+                    com Flet. A aplicação demonstra conceitos de backend,
+                    frontend, consumo de APIs, documentação Swagger e validação
+                    de dados utilizando Pydantic.
+                </p>
+            </section>
+            <section class="mb-10">
+                <h2 class="text-3xl font-bold mb-6">
+                    Tecnologias Utilizadas
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">
+                            Flask
+                        </h3>
+                        <p>
+                            Desenvolvimento da API REST utilizando Blueprints.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">
+                            Pydantic
+                        </h3>
+                        <p>
+                            Validação dos dados recebidos no endpoint POST.
+                        </p>
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">
+                            Swagger
+                        </h3>
+                        <p>
+                            Documentação automática dos endpoints da API.
+                        </p>
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">
+                            Flet
+                        </h3>
+                        <p>
+                            Interface desktop para interação com a API.
+                        </p>
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">
+                            Tailwind CSS
+                        </h3>
+                        <p>
+                            Estilização da landing page.
+                        </p>
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-2">
+                            Python
+                        </h3>
+                        <p>
+                            Linguagem utilizada em todo o desenvolvimento.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+            <section class="mb-10">
+                <h2 class="text-3xl font-bold mb-4">
+                    Funcionalidades
+                </h2>
+                <ul class="list-disc ml-8 space-y-2">
+                    <li>Listagem de Digimons cadastrados</li>
+                    <li>Busca de Digimon por ID</li>
+                    <li>Cadastro de novos Digimons</li>
+                    <li>Validação de dados utilizando Pydantic</li>
+                    <li>Documentação Swagger integrada</li>
+                    <li>Integração entre backend Flask e frontend Flet</li>
+                </ul>
+            </section>
+            <section class="mb-10">
+                <h2 class="text-3xl font-bold mb-4">
+                    Endpoints Disponíveis
+                </h2>
+                <div class="space-y-4">
+
+                    <div class="bg-slate-100 p-4 rounded-lg">
+                        <strong>GET /digimons</strong>
+                        <p>Retorna a lista completa de Digimons.</p>
+                    </div>
+                    <div class="bg-slate-100 p-4 rounded-lg">
+                        <strong>GET /digimons/&lt;id&gt;</strong>
+                        <p>Retorna um Digimon específico pelo ID.</p>
+                    </div>
+                    <div class="bg-slate-100 p-4 rounded-lg">
+                        <strong>POST /digimons</strong>
+                        <p>Cadastra um novo Digimon na aplicação.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="mb-10">
+                <h2 class="text-3xl font-bold mb-4">
+                    Como Executar o Projeto
+                </h2>
+                <p class="mb-4">
+                    Siga os passos abaixo para executar a aplicação:
+                </p>
+                <ol class="list-decimal ml-8 space-y-3">
+                    <li>Clone o repositório do projeto.</li>
+                    <li>Instale as dependências necessárias.</li>
+                    <li>Execute o backend Flask.</li>
+                    <li>Acesse a documentação Swagger.</li>
+                    <li>Execute o frontend Flet.</li>
+                    <li>Cadastre e consulte Digimons.</li>
+                </ol>
+                <pre class="bg-slate-900 text-white p-4 rounded-lg mt-6">
+cd backend
+python app.py
+                </pre>
+                <pre class="bg-slate-900 text-white p-4 rounded-lg mt-4">
+cd frontend
+python app.py
+                </pre>
+                <pre class="bg-slate-900 text-white p-4 rounded-lg mt-4">
+Swagger:
+http://127.0.0.1:5000/apidocs
+                </pre>
+            </section>
+            <footer class="border-t pt-6 text-center text-gray-500">
+                Projeto desenvolvido para a disciplina de
+                Linguagem de Desenvolvimento Web.
+            </footer>
+        </div>
+    </div>
+</body>
